@@ -1,3 +1,21 @@
 <h1>
-  {{title}}
+  {{title}} {{anotherTitle}}
+
+  <ul>
+    <li *ngFor="let item of testArray">{{item}}</li>
+  </ul>
+
+  <div>
+    Service data: <br />
+    {{serviceData}}
+  </div>
+
+  <hr />
+
+  <button (click)="buttonToggle()">Toggle me!</button>
+  <div *ngIf="flag">Click button to hide/show me</div>
+
+  <app-test-component
+    [flag]="flag"
+    (toggleFlag)="buttonToggle()"></app-test-component>
 </h1>
